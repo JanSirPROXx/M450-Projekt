@@ -1,15 +1,28 @@
 import React from 'react'
-import Btn from '../../conponents/btn/btn.js';
+import {useNavigate} from 'react-router-dom';
+
+
+//Navigation Stuff
+
+
 
 function Home() {
+    //Load Navigation
+    let nav = useNavigate();
 
-   
+    const create = () => {
+        nav('/create');
+    
+    }
+    const meineUmfragen = () => {
+        nav('/meineumfragen');
+    }
 
     return (
         <div>
-
-            <Btn btnText={'Umfrage erstellen'}></Btn>
-            <Btn btnText={'Meine Umfragen'}></Btn>
+            <h1>Umfragen machen Spass!</h1>
+            <button onClick={create}>{'Umfrage Erstellen'}</button>
+            <button onClick={meineUmfragen}>{'Meine Umfragen'}</button>
 
         </div>
     )
