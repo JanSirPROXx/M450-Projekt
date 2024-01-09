@@ -9,6 +9,7 @@ router.get('/', (req, res) => {
 router.get('/all', controller.getAll);
 router.post('/add', controller.addNew);
 router.get('/ids', controller.getIds);
+router.get('/data/:id', controller.getDataById);
 
 // Define other routes
 

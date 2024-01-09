@@ -1,15 +1,15 @@
 import React from 'react'
 import {useNavigate} from 'react-router-dom';
 
-function Home() {
-    let nav = useNavigate();
+export default function HomeScr() {
+    const nav = useNavigate();
 
     const create = () => {
         nav('/create');
     
     }
     const meineUmfragen = () => {
-        nav('/meineumfragen');
+        //nav('/meineumfragen');
     }
 
     return (
@@ -22,4 +22,4 @@ function Home() {
     )
 }
 
-export default Home;
+

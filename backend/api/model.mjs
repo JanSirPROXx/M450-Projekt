@@ -24,55 +24,46 @@ class Model {
 
         try {
             const response = await axios.get('http://localhost:3001/quiz');
-            console.log("Response", response.data);
+            console.log("Response: ", response.data);
             return response.data;
         } catch (error) {
             console.error(error);
         }
     }
 
-    getById(id) {
-        // Get an item by its ID
-    }
-
-    getByRestaurantName(){
-        // Get an item by its restaurant name
-    }
 
     async addNew(data) {
         // Add a new item to the database
-        
+        const dataObj = {
+            
+            name: data.name,
+            questions: data.questions
+        }
+
         try {
-            const response = await axios.post('http://localhost:3001/quiz', {
-                
-            });
+            const response = await axios.post('http://localhost:3001/quiz', dataObj);
             console.log("Response", response.data);
             return response.data;
         } catch (error) {
             console.error(error);
         }
-        
+
     }
 
-    updateById(id) {
-        // Update an item in the database
+    async getDataById(id){
+        // Get data from database by id
+        try {
+            const response = await axios.get(`http://localhost:3001/quiz/${id}`);
+            console.log("Response", response.data);
+            return response.data;
+        } catch (error) {
+            console.error(error);
+        }
     }
-    updateByName(){
-        // Update an item in the database
-    }
-
-    deleteById(id) {
-        // Delete an item from the database
-    }
-
-    deleteByName(){
-        // Delete an item from the database
-    }
-    
 
 
 
-    
+
     // Other CRUD methods
 }
 

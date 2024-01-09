@@ -16,7 +16,7 @@ class controller {
         console.log('Add new item-----------------');
         console.log(req.body);
         try {
-            console.log(req.body);
+            //console.log(req.body);
 
             const item = req.body;
             const result = await model.addNew(item);
@@ -28,18 +28,33 @@ class controller {
 
 
     async getIds(req, res) {
-        console.log('Get all ids-----------------')
+        console.log(' getIds | controller.mjs')
         try {
             let arrItems = [];
             const items = await model.getIds();
-            console.log('All items returned');;
+            //console.log('All items returned');;
 
             items.map((item) => {
                 console.log(item.id);
                 arrItems.push(item.id);
             });
+            //console.log(arrItems, 'Array of ids which gets res.sended');
+            //res.json(arrItems);
+            //res.send(arrItems); //Not json, because it is an array
+            res.send(arrItems);
 
-            res.json(arrItems);
+        } catch (error) {
+            res.status(500).send('Error in getting items');
+        }
+    }
+
+
+    async getDataById(req, res) {
+        console.log('getDataById | controller.mjs');
+        try {
+            const item = await model.getDataById(req.params.id);
+            console.log('All items returned');;
+            res.json(item);
         } catch (error) {
             res.status(500).send('Error in getting items');
         }

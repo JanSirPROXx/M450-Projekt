@@ -75,6 +75,8 @@ function Create() {
         }
         //adds quiz to db
         try {
+            //debug
+            console.log(quiz, "Quiz Daten");
             await axios.post('http://localhost:3003/api/add', quiz).then((res) => {
                 console.log(res.data.id);
                 setUmfrageId(res.data.id);

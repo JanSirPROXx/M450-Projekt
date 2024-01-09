@@ -2,7 +2,7 @@
   "quiz": [
     {
       "id": "1",
-      "umfragename": "What is the capital of India?",
+      "name": "All around India, 10 Simple Questions",
       "questions": [
         {
           "id": "1",
@@ -39,6 +39,53 @@
     },
     {
       "id": "DBupsyd"
+    },
+    {
+      "id": "5766fKE"
+    },
+    {
+      "id": "ur9W2_0"
+    },
+    {
+      "id": "B5DuDGg"
+    },
+    {
+      "name": "XY",
+      "questions": [
+        {
+          "question": "",
+          "isText": false,
+          "options": [
+            "Gute Antwort",
+            "Schlechte Antwort"
+          ]
+        },
+        {
+          "question": "Was denken sie von Amerika?",
+          "isText": true,
+          "options": []
+        }
+      ],
+      "id": "iyUB_UI"
+    },
+    {
+      "name": "Wie gehts",
+      "questions": [
+        {
+          "question": "",
+          "isText": false,
+          "options": [
+            "Gute Antwort",
+            "Schlechte Antwort"
+          ]
+        },
+        {
+          "question": "Wie gehts?",
+          "isText": true,
+          "options": []
+        }
+      ],
+      "id": "ju5nCWH"
     }
   ]
 }
