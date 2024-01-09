@@ -1,0 +1,44 @@
+{
+  "quiz": [
+    {
+      "id": "1",
+      "umfragename": "What is the capital of India?",
+      "questions": [
+        {
+          "id": "1",
+          "question": "What is the capital of India?",
+          "isText": "true",
+          "options": []
+        },
+        {
+          "id": "2",
+          "question": "What is the capital of Afrika?",
+          "isText": "false",
+          "options": [
+            "Delig",
+            "Anfangis",
+            "Ende"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2PPUnVD"
+    },
+    {
+      "id": "pF1GmGr"
+    },
+    {
+      "id": "gIqVt8G"
+    },
+    {
+      "id": "i-kILRd"
+    },
+    {
+      "id": "AEbyxkQ"
+    },
+    {
+      "id": "DBupsyd"
+    }
+  ]
+}

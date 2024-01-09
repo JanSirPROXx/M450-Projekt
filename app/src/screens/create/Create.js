@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import Question from './Question';
+import axios from 'axios';
 
 function Create() {
 
     const [umfrageName, setUmfrageName] = useState("XY");
+    const [umfrageId, setUmfrageId] = useState("0");
     const changeTitel = (EL) => {
         const el = EL.target.value;
         setUmfrageName(el);
@@ -30,6 +32,7 @@ function Create() {
             options: ['Gute Antwort', 'Schlechte Antwort'],
         }];
         questions.forEach((question, id) => {
+            //if(id===0) return;
             const questionObj = {
                 question: '',
                 isText: false,
@@ -47,7 +50,7 @@ function Create() {
             }
             
 
-            const divEl = document.getElementById(`div${id + 1}`);
+            //const divEl = document.getElementById(`div${id + 1}`);
 
             //console.log(divEl)
             if (!questionObj.isText) {
@@ -63,13 +66,26 @@ function Create() {
         return questionRes;
     }
 
-    const submitSurvey = () => {
+    const submitSurvey = async () => {
         // Logik zum Absenden der Umfrage
-        
+        const quiz = {
+            name: umfrageName,
+            questions: getQuestionResults(),
+
+        }
+        //adds quiz to db
+        try {
+            await axios.post('http://localhost:3003/api/add', quiz).then((res) => {
+                console.log(res.data.id);
+                setUmfrageId(res.data.id);
+            });
+        } catch (error) {
+            console.error('Error posting quiz:', error);
+        }
 
         //Safe alle questions in DB
-        const questionRes = getQuestionResults();
-        console.log(questionRes);
+        //const questionRes = getQuestionResults();
+        //console.log(questionRes);
         //get Umfrage Id
 
         //create link
@@ -87,6 +103,7 @@ function Create() {
             ))}
             <button onClick={addQuestion}>Add Question</button>
             <button onClick={submitSurvey}>Submit and copy link</button>
+            <p>{umfrageId === "0" ? "Press Safe to get your link" : `https://localhost:3000/${umfrageId}`}</p>
         </div>
     )
 }

@@ -1,13 +1,7 @@
 import React from 'react'
 import {useNavigate} from 'react-router-dom';
 
-
-//Navigation Stuff
-
-
-
 function Home() {
-    //Load Navigation
     let nav = useNavigate();
 
     const create = () => {
@@ -28,4 +22,4 @@ function Home() {
     )
 }
 
-export default Home
+export default Home;
