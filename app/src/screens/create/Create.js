@@ -26,11 +26,7 @@ function Create() {
     const getQuestionResults = () => {
         const questions = document.querySelectorAll('.question');
     
-        const questionRes = [{
-            question: '',
-            isText: false,
-            options: ['Gute Antwort', 'Schlechte Antwort'],
-        }];
+        const questionRes = [];
         questions.forEach((question, id) => {
             //if(id===0) return;
             const questionObj = {
@@ -77,12 +73,21 @@ function Create() {
         try {
             //debug
             console.log(quiz, "Quiz Daten");
+           
+
+
             await axios.post('http://localhost:3003/api/add', quiz).then((res) => {
                 console.log(res.data.id);
                 setUmfrageId(res.data.id);
             });
         } catch (error) {
             console.error('Error posting quiz:', error);
+        }
+
+        try{
+            await axios.post(`http://localhost:3003/api/setupAnswers/${umfrageId}`);
+        }catch(error){
+            console.error('Error posting questions:', error);
         }
 
         //Safe alle questions in DB
@@ -94,9 +99,41 @@ function Create() {
         
     };
 
+    const styles = {
+        container: {
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            padding: '20px',
+            backgroundColor: '#f4f4f4',
+        },
+        title: {
+            color: '#333',
+            marginBottom: '20px',
+        },
+        input: {
+            margin: '10px 0',
+            padding: '10px',
+            width: '100%',
+            maxWidth: '400px',
+        },
+        button: {
+            margin: '10px 0',
+            padding: '10px 20px',
+            backgroundColor: '#007BFF',
+            color: '#fff',
+            border: 'none',
+            borderRadius: '5px',
+            cursor: 'pointer',
+        },
+        link: {
+            color: '#007BFF',
+        },
+    };
+
 
     return (
-        <div>
+        <div style={styles.container} data-testid='create-site-div'>
             <h2>{'Umfrage zum Thema ' + umfrageName}</h2>
             <p>Id bzw pwd für Zugang</p>
             <input type='text' placeholder='Thema' onChange={changeTitel}></input>

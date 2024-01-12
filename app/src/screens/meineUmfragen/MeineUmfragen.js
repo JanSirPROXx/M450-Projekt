@@ -2,7 +2,7 @@ import React from 'react'
 
 function MeineUmfragen() {
   return (
-    <div>MeineUmfragen</div>
+    <div data-testid>MeineUmfragen</div>
   )
 }
 

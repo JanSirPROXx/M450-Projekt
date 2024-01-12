@@ -1,0 +1,162 @@
+{
+  "quiz": [
+    {
+      "id": "1",
+      "name": "All around India, 10 Simple Questions",
+      "questions": [
+        {
+          "id": "1",
+          "question": "What is the capital of India?",
+          "isText": "true",
+          "options": []
+        },
+        {
+          "id": "2",
+          "question": "What is the capital of Afrika?",
+          "isText": "false",
+          "options": [
+            "Delig",
+            "Anfangis",
+            "Ende"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2PPUnVD"
+    },
+    {
+      "id": "pF1GmGr"
+    },
+    {
+      "id": "gIqVt8G"
+    },
+    {
+      "id": "i-kILRd"
+    },
+    {
+      "id": "AEbyxkQ"
+    },
+    {
+      "id": "DBupsyd"
+    },
+    {
+      "id": "5766fKE"
+    },
+    {
+      "id": "ur9W2_0"
+    },
+    {
+      "id": "B5DuDGg"
+    },
+    {
+      "name": "XY",
+      "questions": [
+        {
+          "question": "",
+          "isText": false,
+          "options": [
+            "Gute Antwort",
+            "Schlechte Antwort"
+          ]
+        },
+        {
+          "question": "Was denken sie von Amerika?",
+          "isText": true,
+          "options": []
+        }
+      ],
+      "id": "iyUB_UI"
+    },
+    {
+      "name": "Wie gehts",
+      "questions": [
+        {
+          "question": "",
+          "isText": false,
+          "options": [
+            "Gute Antwort",
+            "Schlechte Antwort"
+          ]
+        },
+        {
+          "question": "Wie gehts?",
+          "isText": true,
+          "options": []
+        }
+      ],
+      "id": "ju5nCWH"
+    },
+    {
+      "name": "GUgus",
+      "questions": [
+        {
+          "question": "how to look clean",
+          "isText": true,
+          "options": []
+        }
+      ],
+      "id": "ou0SzRq"
+    },
+    {
+      "name": "GUgus",
+      "questions": [
+        {
+          "question": "how to look clean",
+          "isText": true,
+          "options": []
+        }
+      ],
+      "id": "aDeM59z"
+    },
+    {
+      "name": "GUgus",
+      "questions": [
+        {
+          "question": "how to look clean",
+          "isText": true,
+          "options": []
+        }
+      ],
+      "id": "7tGwt0G"
+    },
+    {
+      "name": "GUgus",
+      "questions": [
+        {
+          "question": "how to look clean",
+          "isText": true,
+          "options": []
+        }
+      ],
+      "id": "N03m8Te"
+    }
+  ],
+  "answers": [
+    {
+      "quizId": "1",
+      "answers": [
+        [
+          "New Delhi",
+          "Mumbai",
+          "Kolkata",
+          "Chennai",
+          "New Delhi",
+          "Mumbai",
+          "Kolkata",
+          "Chennai"
+        ],
+        [
+          "New Delhi",
+          "Mumbai",
+          "Kolkata",
+          "Chennai",
+          "New Delhi",
+          "Mumbai",
+          "Kolkata",
+          "Chennai"
+        ]
+      ]
+    }
+  ]
+}

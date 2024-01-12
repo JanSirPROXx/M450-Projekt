@@ -32,12 +32,12 @@ function App() {
   }, []);
 
   return (
-    <Router>
-      <div>
-        <Routes>
-          <Route path="/" element={<HomeScr />} />
-          <Route path="/create" element={<Create />} />
-          <Route path="/meineumfragen" element={<MeineUmfragen />} />
+    <Router data-testid='AppRouterTestId'>
+      <div data-testid='AppDivTestId'>
+        <Routes data-testid = 'AppRoutesTestId'>
+          <Route path="/" element={<HomeScr />} data-testid='AppRoute1TestId' />
+          <Route path="/create" element={<Create />} data-testid='AppRoute2TestId' />
+          <Route path="/meineumfragen" element={<MeineUmfragen />} data-testid='AppRoute2TestId' />
           {paths.map((path) => {
             console.log(path, "Added path");
             return <Route path={'/'+path} key={path + 'route'} element={<Fillin key={path} pathNr={path} />} />

@@ -37,23 +37,29 @@ function Fillin({ pathNr }) {
         return <div>Loading...</div>;
     }
 
+    const renderQuestion = (question, index) => {
+        console.log(question.isText, "isText")
+        console.log(question, "howl question")
+        if (question.isText == true) {
+            return <input type="text" />;
+        } else {
+            return question.options.map((option, i) => (
+                <div key={i}>
+                    <input type="radio" id={`option-${i}`} name={`question-${index}`} value={option} />
+                    <label htmlFor={`option-${i}`}>{option}</label>
+                </div>
+            ));
+        }
+    };
+
     return (
-        <div><h1>Füllen Sie die Umfrage, Umfrage ID: {ID}</h1>
-            <h2>{data.name}</h2>
+        <div><h1>{data.name}</h1>
+            <h2>Umfrage code: {ID}</h2>
             <form>
                 {data.questions.map((question, index) => (
                     <div key={index}>
                         <label>{question.question}</label>
-                        {Boolean(question.isText) ? (  
-                            <input type="text" />
-                        ) : (
-                            question.options.map((option, i) => (
-                                <div key={i}>
-                                    <input type="radio" id={`option-${i}`} name={`question-${index}`} value={option} />
-                                    <label htmlFor={`option-${i}`}>{option}</label>
-                                </div>
-                            ))
-                        )}
+                        {renderQuestion(question, index)}
                     </div>
                 ))}
                 <button type="submit">Submit</button>

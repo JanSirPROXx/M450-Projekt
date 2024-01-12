@@ -87,5 +87,32 @@
       ],
       "id": "ju5nCWH"
     }
+  ],
+  "answers": [
+    {
+      "quizId": "1",
+      "answers": [
+        [
+          "New Delhi",
+          "Mumbai",
+          "Kolkata",
+          "Chennai",
+          "New Delhi",
+          "Mumbai",
+          "Kolkata",
+          "Chennai"
+        ],
+        [
+          "New Delhi",
+          "Mumbai",
+          "Kolkata",
+          "Chennai",
+          "New Delhi",
+          "Mumbai",
+          "Kolkata",
+          "Chennai"
+        ]
+      ]
+    }
   ]
 }

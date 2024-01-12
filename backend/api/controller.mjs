@@ -1,5 +1,15 @@
 import model from './model.mjs';
 
+
+// ich habe komplet verkackt und eine json-server als db verwendet
+/*Da wir im projekt von Herr hager M323 einen json-server verwendeten, 
+hatte ich n irgendwie im kopf das wir hier auch einen verwenden.
+
+Und mir ist erst jetzt aufgefallen das wir eine mongoDB verwenden sollten.
+*/
+//im controller 2 und model 2 finden sie die richtige version.
+
+
 class controller {
     async getAll(req, res) {
         try {
@@ -59,7 +69,51 @@ class controller {
             res.status(500).send('Error in getting items');
         }
     }
-    // Other methods corresponding to CRUD operations
+
+    //löschen einer umfrage nach id
+    async deleteDataById(req, res) {
+        console.log('deleteById | controller.mjs');
+
+        const id = req.params.id;
+
+        try {
+            const item = await model.deleteById(id);
+            console.log('All items returned');;
+            res.json(item);
+        } catch (error) {
+            res.status(500).send('Error in getting items');
+        }
+    }
+
+    async getAnswersByQuizId(req, res) {
+        console.log('getAnswersByQuizId | controller.mjs');
+
+        const id = req.params.id;
+
+        try {
+            const item = await model.getAnswersByQuizId(id);
+            console.log('All items returned');;
+            res.json(item);
+        } catch (error) {
+            res.status(500).send('Error in getting items');
+        }
+    }
+
+    //setup answers
+    async setupAnswers(req, res) {
+        console.log('setupAnswers | controller.mjs');
+
+        const id = req.params.id;
+
+        try {
+            const item = await model.setupAnswers(id);
+            console.log('All items returned');;
+            res.json(item);
+        } catch (error) {
+            res.status(500).send('Error in getting items');
+        }
+    }
+    
 }
 
 export default new controller();
