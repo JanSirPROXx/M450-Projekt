@@ -110,6 +110,7 @@ function Create() {
         title: {
             color: '#333',
             marginBottom: '20px',
+            fontFamily: '"Roboto", sans-serif', // Add this line
         },
         input: {
             margin: '10px 0',
@@ -129,20 +130,27 @@ function Create() {
         link: {
             color: '#007BFF',
         },
+        h2: {
+            fontFamily: '"Roboto", sans-serif',
+        },
+        p: {
+            fontFamily: '"Roboto", sans-serif',
+        },
+        
     };
 
 
     return (
         <div style={styles.container} data-testid='create-site-div'>
-            <h2>{'Umfrage zum Thema ' + umfrageName}</h2>
-            <p>Id bzw pwd für Zugang</p>
-            <input type='text' placeholder='Thema' onChange={changeTitel}></input>
+            <h2 style={styles.h2}>{'Umfrage zum Thema ' + umfrageName}</h2>
+            <p style={styles.p}>Id bzw pwd für Zugang</p>
+            <input type='text' placeholder='Thema' onChange={changeTitel} style={styles.input} ></input>
             {questions.map(question => (
                 <Question key={question.id} question={question} />
             ))}
-            <button onClick={addQuestion}>Add Question</button>
-            <button onClick={submitSurvey}>Submit and copy link</button>
-            <p>{umfrageId === "0" ? "Press Safe to get your link" : `https://localhost:3000/${umfrageId}`}</p>
+            <button style={styles.button} onClick={addQuestion}>Add Question</button>
+            <button style={styles.button} onClick={submitSurvey}>Submit and copy link</button>
+            <p style={styles.link}>{umfrageId === "0" ? "Press Safe to get your link" : `https://localhost:3000/${umfrageId}`}</p>
         </div>
     )
 }

@@ -23,6 +23,7 @@ export default function HomeScr() {
         title: {
             color: '#333',
             marginBottom: '50px',
+            fontFamily: '"Roboto", sans-serif',
         },
         button: {
             margin: '10px',
@@ -42,7 +43,7 @@ export default function HomeScr() {
 
     return (
         <div style={styles.container}>
-            <h1 style={styles.title}>Umfragen machen Spass!</h1>
+            <h1 style={styles.title}>Umfragenapplikation by Jan</h1>
             <button style={styles.button} onClick={create}>{'Umfrage Erstellen'}</button>
             <button style={styles.button} onClick={meineUmfragen}>{'Meine Umfragen'}</button>
 
